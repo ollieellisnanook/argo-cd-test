@@ -6,12 +6,12 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/SigNoz/charts
-    targetRevision: main
-    path: deploy/kubernetes/platforms/helm
+    repoURL: https://charts.signoz.io
+    chart: signoz
+    targetRevision: 0.27.0  # or latest release
     helm:
       valueFiles:
-        - values.yaml # your custom values
+        - values.yaml   # path in your Git repo, if using GitOps
   destination:
     server: https://kubernetes.default.svc
     namespace: signoz
